@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /* 네비게이션 바 - 메인 블럭 */
+/* 전체화면 크기로 지정.
+목록에 불릿이 나타나지 않도록 함.
+margin 과 pdding 은 0 으로 설정(필요에 따라 조정 가능) */
+nav ul {
+    width: 100%;
+    background-color: rgba(44, 42, 39, 0.983);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+/* 네비게이션 바 - 서브 메뉴 목록 */
+/* 각각의 목록들이 메뉴에서 옆으로 나란히 배치될 수 있도록 인라인 블럭으로 지정. */
+nav ul li {
+    display: inline-block;
+}
+
+/* 네비게이션 바 - 맨 오른쪽에 위치할 홈 버튼 */
+.home {
+    background-color: darkorange;
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
+    float: right;
+}
+
+.home a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 16px 16px;
+}
+
+/* .dropdown: li 태그에 적용되는 클래스, 드롭다운 메뉴 정의*/
+/* 드롭다운 메뉴의 메인 컨테이너.
+메뉴 제목과 서브 메뉴 항목이 포함됨. */
+.dropdown {
+    position: relative;
+}
+
+/* 메인메뉴 텍스트 지정 */
+/* 메인 메뉴 항목으로 텍스트 컬러, 크기 등을 조정.
+마우스 포인터가 위치하면 손가락 모양으로 변경. */
+
+.dropdown-menu {
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* 드롭다운되는 메뉴 영역을 지정 */
+
+/* 가장 가까운 상위요소인 .dropdown 의 position 이 relative
+->이를 기준으로 절대위치를 지정해야 아래로 드롭다운 효과가 정상적으로 나타남.
+position:absolute 로 설정
+min-width: 최소 너비 지정.
+box-shadow: 박스 요소에 그림자를 넣는 속성. 0px 8px 16px 0px rgba(0,0,0,0.2)의 값은 앞에서부터 차례대로 수평 그림자 위치, 수직 그림자 위치, 그림자의 흐림 정도, 그림자가 드리워지는 정도, 그림자 색깔을 의미.
+<a> 태그는 기본적으로 인라인 속성을 가지고 있기 때문에, display:block속성과 값을 넣어주어 블록 속성을 가지도록하여 한줄로 배치. */
+.dropdown-content {
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}   
+
+/* 서브 메뉴 숨기기 */
+.dropdown-content {
+    display: none;
+}
+
+/* hover 효과 넣기 */
+/* :not(선택자)는 특정 선택자를 제외 시킬때 사용. 
+home클래스는 hover 효과를 넣지 않기 위해 적용함. */
+.dropdown-menu:hover:not(.home){
+    background-color: darkorange;
+    color: white;
+}
+
+/* drop down 만들기 */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* 서브 메뉴 항목에 hover 효과 넣기 */
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="dropdown">
+                <div class="dropdown-menu">메뉴1</div>
+                <div class="dropdown-content">
+                    <a href="#">메뉴1-1</a>
+                    <a href="#">메뉴1-2</a>
+                    <a href="#">메뉴1-3</a>
+                    <a href="#">메뉴1-4</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <div class="dropdown-menu">메뉴2</div>
+                <div class="dropdown-content">
+                    <a href="#">메뉴2-1</a>
+                    <a href="#">메뉴2-2</a>
+                    <a href="#">메뉴2-3</a>
+                    <a href="#">메뉴2-4</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <div class="dropdown-menu">메뉴3</div>
+                <div class="dropdown-content">
+                    <a href="#">메뉴3-1</a>
+                    <a href="#">메뉴3-2</a>
+                    <a href="#">메뉴3-3</a>
+                    <a href="#">메뉴3-4</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <div class="dropdown-menu">메뉴4</div>
+            </li>
+            <li class="home"><a href="#">홈으로</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
