@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <style>
-        /* 네비게이션 바 - 메인 블럭 */
+
+/* 네비게이션 바 - 메인 블럭 */
 /* 전체화면 크기로 지정.
-목록에 불릿이 나타나지 않도록 함.
+list-style-type: none; -> 목록에 불릿이 나타나지 않도록 함.
 margin 과 pdding 은 0 으로 설정(필요에 따라 조정 가능) */
 nav ul {
     width: 100%;
@@ -16,12 +11,16 @@ nav ul {
     padding: 0;
 }
 /* 네비게이션 바 - 서브 메뉴 목록 */
-/* 각각의 목록들이 메뉴에서 옆으로 나란히 배치될 수 있도록 인라인 블럭으로 지정. */
+/* 각각의 목록들 옆으로 배치될 수 있도록 인라인 블럭으로. */
 nav ul li {
     display: inline-block;
 }
 
 /* 네비게이션 바 - 맨 오른쪽에 위치할 홈 버튼 */
+/* 홈 메뉴를 맨 오른쪽에 배치하기 위해 float:right 속성 부여.
+<a> 태그는 인라인 태그 -> 서브메뉴 항목 '세로로 배치'하기 위해 블럭 속성 부여.
+글자에 기본적으로 밑줄이 표기 -> text-decoration:none으로 밑줄 제거.
+a 는 기본적으로 인라인 요소. width, height 는 적용 불가능 -> padding 이용해 크기 지정. */
 .home {
     background-color: darkorange;
     width: 100px;
@@ -97,43 +96,3 @@ home클래스는 hover 효과를 넣지 않기 위해 적용함. */
 /* 서브 메뉴 항목에 hover 효과 넣기 */
 
 .dropdown-content a:hover {background-color: #f1f1f1}
-    </style>
-</head>
-<body>
-    <nav>
-        <ul>
-            <li class="dropdown">
-                <div class="dropdown-menu">메뉴1</div>
-                <div class="dropdown-content">
-                    <a href="#">메뉴1-1</a>
-                    <a href="#">메뉴1-2</a>
-                    <a href="#">메뉴1-3</a>
-                    <a href="#">메뉴1-4</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <div class="dropdown-menu">메뉴2</div>
-                <div class="dropdown-content">
-                    <a href="#">메뉴2-1</a>
-                    <a href="#">메뉴2-2</a>
-                    <a href="#">메뉴2-3</a>
-                    <a href="#">메뉴2-4</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <div class="dropdown-menu">메뉴3</div>
-                <div class="dropdown-content">
-                    <a href="#">메뉴3-1</a>
-                    <a href="#">메뉴3-2</a>
-                    <a href="#">메뉴3-3</a>
-                    <a href="#">메뉴3-4</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <div class="dropdown-menu">메뉴4</div>
-            </li>
-            <li class="home"><a href="#">홈으로</a></li>
-        </ul>
-    </nav>
-</body>
-</html>
