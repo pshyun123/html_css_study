@@ -1,42 +1,147 @@
 .body{
     margin: 0;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 a {
     text-decoration: none;
-    color: white;
+    color: rgb(59, 58, 58);
 }
 .navbar{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: #1c1c1c;
-    padding: 8px 12px;
+    align-items: left;
+    background-color: white;
+    padding: 8px 16px;
 }
-.header{
-    padding: 15px;
-    text-align: left;
+.navbar__logo a{
     font-size: 24px;
-    color:white;
-}
+    color: red;
 
-.navbar_logo i {
-    color:white;
 }
-.navbar_menu{
+/* 메뉴바 메뉴 - 점 없애주고 패딩값 없앰 */
+.navbar__menu{
     display: flex;
     list-style: none;
     padding-left: 0;
 }
-
-.navbar_menu li{
-    padding: 8px 10px
+/* 메뉴바 메뉴리스트 사이 간격조정 */
+.navbar__menu li {
+    padding: 8px 30px;
+    margin: 0 0 0 0px;
 }
-.navbar_icons{
+
+/* 오른쪽 아이콘 설정 */
+.navbar_icons {
     list-style: none;
-    color:white;
+    color: rgb(59, 58, 58);
+}
+@media screen and (max-width:768px){
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .navbar__menu{
+        flex-direction: column;
+        align-items: left;
+        width: 100%;
+    }
+    .navbar__menu li{
+        width: 100%;
+        text-align: center;
+    }
+}
+.navbar__menu li:hover{
+    background-color: #eee;
+    border-radius: 4px;
+}
+
+/* 돋보기 아이콘.. */
+.navbar__icons li {
+    padding: 8px 10px;
+    list-style: none;
+}
+
+.navbar__toogleBtn{
+    position: absolute;
+}
+
+/* 파란 버튼 */
+.button a{
+    color: white;
+    text-decoration: none;
+}
+.button {
+    background-color: #0d56af;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    border-radius: 10px; /* 테두리를 둥글게 만들기 위한 속성 */
+}
+.button:hover {
+    background-color: #1473e6;
+    color: white;
+}
+.dropdown a {
+    position: relative;
+    cursor: pointer;
+}
+
+/* 드롭다운되는 메뉴 영역을 지정 */
+.dropdown-content {
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 8px 0px rgba(231, 230, 230, 0.2);
+}
+
+.dropdown-content a {
+    color: rgb(39, 39, 39);
+    padding: 12px 8px;
+    text-decoration: none;
+    display: block;
+}   
+
+/* 서브 메뉴 숨기기 */
+.dropdown-content {
+    display: none;
+}
+
+/* drop down 만들기 */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* 서브 메뉴 항목에 hover 효과 넣기 */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* 이미지 위에 글자 넣기-아래 세개 */
+.main-warp{
+    width: 100%;
+    margin: 10px auto;
+    position: relative;
+    display: flex; /* flex 컨테이너 설정 */
+    justify-content: center; /* 수평 가운데 정렬 */
+    align-items: center; /* 수직 가운데 정렬 */
+}
+.main-warp img {
+    width: 20%;
+    height: 20%;
+    vertical-align: middle;
+}
+.main-text{
+    position: absolute;
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+    top: 30%;
+	left: 50%;
+    transform: translate( -50%, -50% );
+    color: white;
+}
+/* 이미지 사이즈 조절 */
+.main-image img {
+    max-width: 100%; /* 이미지 최대 너비 설정 */
+    height: auto; /* 이미지 높이 자동 조절 */
     display: flex;
 }
-.navbar_icons li{
-    padding: 8px 10px
-}
-
