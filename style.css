@@ -1,0 +1,42 @@
+.body{
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1c1c1c;
+    padding: 8px 12px;
+}
+.header{
+    padding: 15px;
+    text-align: left;
+    font-size: 24px;
+    color:white;
+}
+
+.navbar_logo i {
+    color:white;
+}
+.navbar_menu{
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+}
+
+.navbar_menu li{
+    padding: 8px 10px
+}
+.navbar_icons{
+    list-style: none;
+    color:white;
+    display: flex;
+}
+.navbar_icons li{
+    padding: 8px 10px
+}
+
