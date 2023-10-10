@@ -14,9 +14,8 @@ a {
     padding: 8px 16px;
 }
 .navbar__logo a{
-    font-size: 24px;
+    font-size: 18px;
     color: red;
-
 }
 /* 메뉴바 메뉴 - 점 없애주고 패딩값 없앰 */
 .navbar__menu{
@@ -26,15 +25,17 @@ a {
 }
 /* 메뉴바 메뉴리스트 사이 간격조정 */
 .navbar__menu li {
-    padding: 8px 30px;
+    padding: 8px 40px;
     margin: 0 0 0 0px;
+    text-align: center;
 }
 
-/* 오른쪽 아이콘 설정 */
+/* 오른쪽 돋보기 아이콘 설정 */
 .navbar_icons {
     list-style: none;
     color: rgb(59, 58, 58);
 }
+/* 반응형 웹 네비게이션 바 */
 @media screen and (max-width:768px){
     .navbar{
         flex-direction: column;
@@ -51,6 +52,7 @@ a {
         text-align: center;
     }
 }
+/* 네이게이션 메뉴에 커서 올리면 */
 .navbar__menu li:hover{
     background-color: #eee;
     border-radius: 4px;
@@ -61,12 +63,12 @@ a {
     padding: 8px 10px;
     list-style: none;
 }
-
+/* 네이게이션 바 토글 버튼-안된다.ㅠㅠ */
 .navbar__toogleBtn{
     position: absolute;
 }
 
-/* 파란 버튼 */
+/* 파란 버튼 관련 */
 .button a{
     color: white;
     text-decoration: none;
@@ -83,6 +85,8 @@ a {
     background-color: #1473e6;
     color: white;
 }
+
+/* 드롭다운 메뉴 */
 .dropdown a {
     position: relative;
     cursor: pointer;
@@ -117,10 +121,12 @@ a {
 
 /* 이미지 위에 글자 넣기-아래 세개 */
 .main-warp{
-    width: 100%;
-    margin: 10px auto;
-    position: relative;
     display: flex; /* flex 컨테이너 설정 */
+    width: flex;
+    height: flex;
+    margin: 0px auto;
+    position: relative;
+    
     justify-content: center; /* 수평 가운데 정렬 */
     align-items: center; /* 수직 가운데 정렬 */
 }
@@ -140,8 +146,45 @@ a {
     color: white;
 }
 /* 이미지 사이즈 조절 */
-.main-image img {
-    max-width: 100%; /* 이미지 최대 너비 설정 */
-    height: auto; /* 이미지 높이 자동 조절 */
+.main-image {
+    margin: 0px;
+    background-image: url("./images/첫배경.jpg");
+    background-size: cover;
+    height: 320px;
+    max-width: auto; /* 이미지 최대 너비 설정 */
+    min-width: 600px;
+    min-height: auto;
     display: flex;
+}
+
+/* container section */
+section{
+    width: 800px;
+    margin: 0 auto;
+}
+h3{
+    font-size:30px;
+}
+h4{
+    font-size: 25px;
+}
+/* 원하는 무엇이든~ */
+h5{
+    font-size: 20px;
+}
+h6{
+    font-size:15px;
+}
+p{
+    line-height:20px;
+	font-size:14px;
+}
+article{
+    width: 350px;
+    height: 500px;
+    margin: 35px;
+    padding: 10px;
+    float: left;
+    border: 1px #ccc solid;
+
 }
