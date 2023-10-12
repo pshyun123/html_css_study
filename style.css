@@ -16,6 +16,7 @@ a {
 .toogleBtn{
     display:none;
 }
+/* 네비바 로고 */
 .navbar__logo {
     font-size: 18px;
     font-weight: 700;
@@ -24,11 +25,13 @@ a {
     display: flex;
     flex-direction: row;
 }
+/* 네비바 로고-이미지 */
 .navbar__logo > img {
     display: inline;
     width: 40px;
     height: 40px;
 }
+/* 네비바 로고-텍스트 */
 .navbar__logo > p {
     padding-left: 10px;
     font-size: 20px;
@@ -39,7 +42,7 @@ a {
     list-style: none;
     padding-left: 0;
 }
-/* 메뉴바 메뉴리스트 사이 간격조정 */
+/* 메뉴바 메뉴-리스트 사이 간격 조정 */
 .navbar__menu li {
     padding: 8px 40px;
     margin: 0 0 0 0px;
@@ -185,9 +188,11 @@ a {
 .container{
     width: 1600px;
 }
+/* 미처 알지 못했던~ 세계최고의~ 갱신을 통해~*/
 h3{
     font-size:30px;
 }
+/* 튜토리얼~ */
 h4{
     font-size: 25px;
 }
@@ -195,6 +200,7 @@ h4{
 h5{
     font-size: 20px;
 }
+/* 시작하기 / 영감 / 새로운 기능 */
 h6{
     font-size:15px;
 }
@@ -206,6 +212,23 @@ p{
     margin: 40px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2fr;
     justify-content: center;
     gap:10px;
+}
+.grid-items{
+    max-width: 350px;
+    justify-content: center;
+    align-items: center;
+    /* display: flex; */
+}
+.grid-items > img{
+    justify-content: center;
+}
+.textbox{
+    width: 100%;
+    text-align: center;
+}
+.textbox a{
+    color:blue;
 }
