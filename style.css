@@ -4,14 +4,17 @@
 }
 a {
     text-decoration: none;
-    color: rgb(59, 58, 58);
+    color: #1473e6;
 }
 .navbar{
     display: flex;
     justify-content: space-between;
-    align-items: left;
+    align-items: flex-start;
     background-color: white;
     padding: 8px 16px;
+}
+.navbar a{
+    color: rgb(59, 58, 58)
 }
 .toogleBtn{
     display:none;
@@ -20,7 +23,7 @@ a {
 .navbar__logo {
     font-size: 18px;
     font-weight: 700;
-    color: red;
+    color: #F91101;
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -35,6 +38,7 @@ a {
 .navbar__logo > p {
     padding-left: 10px;
     font-size: 20px;
+    color:#F91101;
 }
 /* 메뉴바 메뉴 - 점 없애주고 패딩값 없앰 */
 .navbar__menu{
@@ -73,11 +77,26 @@ a {
     .toogleBtn{
         display:block;
     }
+
+    /* 메뉴 숨기려고 했는데 잘 되지 않음 */
+    /* .dropdown-content {
+        display: none;
+    } */
+
+    /* .dropdown:hover .dropdown-content {
+        max-height: 200px; 드롭다운 내용의 최대 높이 설정
+    } */
+    
+    /* 드롭다운 내용의 초기 상태를 숨깁니다. */
+    /* .dropdown .dropdown-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out; 부드러운 전환 효과를 적용합니다.
+    } */
 }
 /* 네이게이션 메뉴에 커서 올리면 */
 .navbar__menu li:hover{
-    background-color: #eee;
-    border-radius: 4px;
+    color:#1473e6;
 }
 
 /* 돋보기 아이콘.. */
@@ -85,7 +104,7 @@ a {
     padding: 8px 10px;
     list-style: none;
 }
-/* 네이게이션 바 토글 버튼-안된다.ㅠㅠ */
+/* 네이게이션 바- 햄버거  */
 .navbar__toogleBtn{
     position: absolute;
 }
@@ -94,9 +113,10 @@ a {
  .button a{
     color: white;
     text-decoration: none;
+    font-size: 17px;
 }
 .button {
-    background-color: #0d56af;
+    background-color: #1473e6;
     color: white;
     border: none;
     padding: 8px 20px;
@@ -104,7 +124,7 @@ a {
     border-radius: 10px; /* 테두리를 둥글게 만들기 위한 속성 */
 }
 .button:hover {
-    background-color: #1473e6;
+    background-color: #0d56af;
     color: white;
 }
 
@@ -115,6 +135,7 @@ a {
 .dropdown a {
     /* position: relative; */
     cursor: pointer;
+    font-size: 16px;
 }
 
 /* 드롭다운되는 메뉴 영역을 지정 */
@@ -132,6 +153,7 @@ a {
     padding: 12px 8px;
     text-decoration: none;
     display: block;
+    
 }   
 
 /* 서브 메뉴 숨기기 */
@@ -146,20 +168,21 @@ a {
 /* 서브 메뉴 항목에 hover 효과 넣기 */
 .dropdown-content a:hover {background-color: #f1f1f1}
 
-/* 이미지 위에 글자 넣기-아래 세개 */
+/* 메인1 */
 .main-warp{
     display: flex; /* flex 컨테이너 설정 */
     width: flex;
     height: flex;
     margin: 0px auto;
+    padding: 50px;
     position: relative;
     
     justify-content: center; /* 수평 가운데 정렬 */
     align-items: center; /* 수직 가운데 정렬 */
 }
 .main-warp img {
-    width: 20%;
-    height: 20%;
+    width: 20px;
+    height: 20px;
     vertical-align: middle;
 }
 .main-text{
@@ -184,13 +207,16 @@ a {
     display: flex;
 }
 
-/* container section */
+/* 메인2-container section */
 .container{
-    width: 1600px;
+    max-width: 1920px;
+    margin: 0 auto; /* 가로 가운데 정렬을 위해 margin을 auto로 설정 */
+    padding: 0 20px; /* 원하는 경우 가로 여백 설정 */
 }
+/* Make it. Creative Cloud. */
 /* 미처 알지 못했던~ 세계최고의~ 갱신을 통해~*/
 h3{
-    font-size:30px;
+    font-size:28px;
 }
 /* 튜토리얼~ */
 h4{
@@ -201,34 +227,117 @@ h5{
     font-size: 20px;
 }
 /* 시작하기 / 영감 / 새로운 기능 */
-h6{
-    font-size:15px;
-}
+
 p{
     line-height:20px;
 	font-size:14px;
 }
 .grid-container {
-    margin: 40px;
+    
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 2fr;
     justify-content: center;
+    align-items: center;
     gap:10px;
+    margin: 0 auto;
+    max-width: 1200px;
+    text-align: center;
+    /* min-width: 100vh; */
+    
+    
 }
 .grid-items{
     max-width: 350px;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
+    text-align: center;
     /* display: flex; */
 }
+h6{
+    font-size:15px;
+    text-align: left;
+}
+
 .grid-items > img{
     justify-content: center;
 }
 .textbox{
     width: 100%;
     text-align: center;
+    padding-top: 40px;
+    padding-bottom: 60px;
 }
-.textbox a{
-    color:blue;
+
+/* 메인3-하단 박스영역 */
+.box{
+    border: 1px black;
+    height: 280px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: black;
+    padding:20px
+}
+.textbox-2{
+    color:white;
+    text-align: center;
+}
+
+/* footer 네비바1 */
+.container-box{
+    background-color: #fafafa;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.flex-box{
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    margin-left: 30px;
+    padding:15px;
+    margin-top: 10px; 
+    max-width: flex;/* 각 flex-box에 최대 너비를 설정함 */
+    flex:1;/* 공간에 맞춰 사이즈 확장됨 */
+}
+.flex-box a{
+    margin-bottom: 5px;
+    color: rgb(59, 58, 58);
+}
+.flex-box p{
+    font-weight: 700;
+    font-size:17px;
+}
+
+.container-end {
+    display: flex;
+    flex-direction: row;
+    background-color: #fafafa;
+    padding: 15px;
+    
+    /* justify-content: space-between; */
+    /* align-items: center; */
+    /* flex-wrap: wrap; */
+    
+}
+
+.flex-box2 {
+    text-align: left; /* 각 행의 텍스트를 왼쪽으로 정렬합니다. */
+}
+
+.fixed-navbar {
+    text-align: right;
+}
+
+/* 작은 화면에 대한 적절한 응답성을 보장하기 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+    .flex-box {
+        max-width: 100%; /* 작은 화면에서 상자를 전체 너비로 만듦 */
+        margin-right: 0;
+        margin-left: 0;
+    }
 }
