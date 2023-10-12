@@ -13,9 +13,12 @@ a {
     background-color: white;
     padding: 8px 16px;
 }
-.navbar__logo a{
+.navbar__logo {
     font-size: 18px;
+    font-weight: 700;
     color: red;
+    align-items: center;
+    /* display: flex; */
 }
 /* 메뉴바 메뉴 - 점 없애주고 패딩값 없앰 */
 .navbar__menu{
@@ -184,7 +187,10 @@ article{
     height: 500px;
     margin: 35px;
     padding: 10px;
-    float: left;
-    border: 1px #ccc solid;
+    float:left;
+    /* border: 1px #ccc solid; */
+}
 
+.description {
+    display: flex;
 }
