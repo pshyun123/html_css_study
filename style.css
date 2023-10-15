@@ -1,6 +1,10 @@
+/* ========= */
+
 body{
     margin: 0;
-    font-family: 'Noto Sans KR', sans-serif;
+    /* font-family: 'Noto Sans KR', sans-serif; */
+    font-family:adobe-clean-han-korean,adobe-clean,Apple SD Gothic Neo,Malgun Gothic,Apple Gothic,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;
+    
 }
 a {
     text-decoration: none;
@@ -12,13 +16,27 @@ a {
     align-items: flex-start;
     background-color: white;
     padding: 8px 16px;
+    position: fixed; /* 네비게이션 바를 고정합니다. */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 .navbar a{
     color: rgb(59, 58, 58)
 }
-.toogleBtn{
+.toggleBtn{
     display:none;
 }
+/* 로그인 버튼 고정 */
+.login {
+    position: absolute; /* 로그인 버튼을 네비게이션 바에 대한 상대 위치로 설정합니다. */
+    top: 0; /* 네비게이션 바 상단에 배치합니다. */
+    right: 20px; /* 네비게이션 바 오른쪽에 여백을 유지합니다. */
+    z-index: 2000; /* 다른 요소보다 위에 표시합니다. */
+    /* 나머지 스타일 속성 */
+}
+
 /* 네비바 로고 */
 .navbar__logo {
     font-size: 18px;
@@ -64,7 +82,7 @@ a {
     padding:8px 12px;
 }
 
-.navbar__toogleBtn{
+.navbar__toggleBtn{
     position: absolute;
     right: 32px;
     font-size:24px;
@@ -88,7 +106,7 @@ a {
         text-align: left;
         margin:0;
     }
-    .toogleBtn{
+    .toggleBtn{
         display:block;
     }
     .navbar__icons{
@@ -96,6 +114,11 @@ a {
         justify-content: left;
         width:100%;
     }
+    .navbar__menu.active,
+    .navbar__icons.active{
+        display: flex;
+    }
+    
 
 }
 /* 네이게이션 메뉴에 커서 올리면 */
@@ -109,7 +132,7 @@ a {
     list-style: none;
 }
 /* 네이게이션 바- 햄버거  */
-.navbar__toogleBtn{
+.navbar__toggleBtn{
     position: absolute;
 }
 
@@ -135,11 +158,16 @@ a {
 /* 드롭다운 메뉴 */
 .dropdown {
     position: relative;
+    /* display: block; */
+    box-sizing: border-box;
 }
 .dropdown a {
     /* position: relative; */
     cursor: pointer;
     font-size: 16px;
+    
+    
+
 }
 
 /* 드롭다운되는 메뉴 영역을 지정 */
@@ -150,6 +178,7 @@ a {
     background-color: #f9f9f9;
     width: 100%;
     box-shadow: 0px 8px 8px 0px rgba(231, 230, 230, 0.2);
+    
 }
 
 .dropdown-content a {
@@ -229,72 +258,94 @@ a {
 .container{
     /* max-width: 1920px; */
     width: 100%;
-    /* padding: 0 20px; 원하는 경우 가로 여백 설정 */
+    display:grid;
+    place-items:center;
+
 }
 .grid-container {
     display: grid;
+    place-items:center;
+    /* min-height: 100dvh; */
     width: 90%;
-    margin: 0 auto;
-    outline: 1px solid red;
+    /* margin: 0 auto; */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap:1em;
+    gap:1rem;
 }
-/* @media (max-width: 768px) {
-    .grid-container {
-        grid-template-row: repeat(auto-fit, minmax(300px, 1fr));
-    }
-} */
+
 .grid-items{   
     display: flex;
     flex-direction: column; /* 항목을 세로로 나열 */
     align-items: center;
     text-align: center;
-    justify-content: center;
     height: 500px;
     padding: 20px;
-    
+    margin-bottom: 0;
+    margin-top: 0;
 }
-.grid-items > h6 {
+/* .grid-items > h6 {
     flex-grow:1;
-}
+} */
+
+
+
 .grid-items > img{
     width: 60%;
     min-width: 300px;
+    max-width: 100%;
     background-size: cover;
     /* display:block;
     justify-content: center; */
 }
+.grid-items > h6{
+    /* text-align: left;
+    font-style: normal; */
+}
+/* main - 텍스트 관련 */
 /* Make it. Creative Cloud. */
 /* 미처 알지 못했던~ 세계최고의~ 갱신을 통해~*/
+.main-text > h2{
+    font-size: 34px;
+    word-break: keep-all;
+    margin-top: 55px;
+}
 h3{
     font-size:28px;
+    word-break: keep-all;
+    margin: 50px 0px 0px 20px
 }
 /* 튜토리얼~ */
 h4{
     font-size: 25px;
+    word-break: keep-all;
 }
 /* 원하는 무엇이든~ */
 h5{
     font-size: 20px;
+    word-break: keep-all;
 }
 /* 시작하기 / 영감 / 새로운 기능 */
 
 p{
     line-height:20px;
 	font-size:14px;
+    word-break: keep-all;
 }
 
 h6{ 
     font-size:15px;
     text-align: left;
+    word-break: keep-all;
 }
 
-
+.flex-box > p > a {
+    word-break: keep-all;
+}
 .textbox{
     width: 100%;
     text-align: center;
     padding-top: 40px;
     padding-bottom: 60px;
+    word-break: keep-all;
 }
 
 /* 메인3-하단 박스영역 */
@@ -372,16 +423,19 @@ h6{
     margin-right:10px;
 }
 
-.container-end ul li a{
-    color: rgb(39, 39, 39);
-}
 .flex-box2 { 
     font-weight: 400;
+    
 }
-
+.flex-box2 a{
+    color: rgb(39, 39, 39);
+}
 .fixed-navbar {
     font-weight: 300;
     font-size: 12px;
+}
+.container-end{
+    word-break: keep-all;
 }
 
 /* 모바일용 Footer flex-box  */
@@ -397,8 +451,8 @@ h6{
         /* max-width: 100%;  */
         flex-direction: column;
     }
-    /* .flex-box {
+    .flex-box {
         border-top: 1px rgb(59, 58, 58);
         border-bottom: 1px rgb(59, 58, 58);
-    } */
+    }
 }
