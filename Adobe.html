@@ -13,19 +13,18 @@
 <body>
     <!-- header+section.top+section.middle+section.bottom+footer -->
     <header>
-        <a href="" class="toggleBtn">
-            <i class="fa-solid fa-bars"></i>
-        </a>
-        <div class="logo">
-        <i class=""></i>
-        <span class="title"></span>
-        </div>
         <nav class="navbar">
-            <a class="navbar__logo" href="https://url.kr/6f1qvc">
-                <!-- 로고 -->
-               <img src="./icons/Adobe_Corporate_Horizontal_Red_HEX.svg" alt=""></div>
-            <p>Adobe</p>
-            </a>
+            <div class="toggle__adobe">
+                <a href="" class="toggleBtn">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+                <a class="navbar__logo" href="https://url.kr/6f1qvc">
+                    <!-- 어도비로고 -->
+                <img src="./icons/Adobe_Corporate_Horizontal_Red_HEX.svg" alt="">
+                <p>Adobe</p>
+                </a>
+            </div>
+            
             <ul class="navbar__menu">
                 <!-- (li>a)*5 -->
                 <li class="dropdown">
@@ -54,17 +53,16 @@
                 <!-- 버튼모양으로 -->
                 <button class="button"><a href="#">구매하기</a></button>
             </ul>
-            <ul class="navbar__icons">
-                <!-- 돋보기 모양 아이콘 -->
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </ul>
-           
-            <ul class="login"><a href="#">로그인</a></ul>
+        
+            <div class="navbar__right">
+                                <!-- 돋보기 모양 아이콘 -->
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <a href="#">로그인</a>
+            </div>
         </nav>
     </header>
     <main> 
     <!-- 구독갱신 메세지 텍스트와 이미지 -->
-        <div class="main-wrap">
             <div class="main-image">
                 <!-- <img src="./images/첫배경.jpg" alt=""> -->
                 <div class="main-text">
@@ -73,7 +71,6 @@
                     <button class="button"><a href="#">구매하기</a></button>
                 </div>
             </div>
-        </div>
 <!-- 컨테이너 마진 등 -->
         <section class="container">
         <!-- 중간 문구, 사진과 텍스트 -->
@@ -197,21 +194,22 @@
                         <a href="#">내 계정으로 로그인</a> 
                 </div>
             </div>
-            <div class="flex-box">  
-                <p>Adobe</p>
-                    <a href="#">정보</a>
-                    <a href="#">채용 정보</a>
-                    <a href="#">뉴스룸</a>
-                    <a href="#">기업의 사회적 책임</a>
-                    <a href="#">IR</a>
-                    <a href="#">공급망</a>
-                    <a href="#">Trust Center</a>
-                    <a href="#">이벤트</a>
-                    <a href="#">다양성과 포용력</a>
-                    <a href="#">기업 윤리</a>
+            <div class="block">
+                <div class="flex-box">  
+                    <p>Adobe</p>
+                        <a href="#">정보</a>
+                        <a href="#">채용 정보</a>
+                        <a href="#">뉴스룸</a>
+                        <a href="#">기업의 사회적 책임</a>
+                        <a href="#">IR</a>
+                        <a href="#">공급망</a>
+                        <a href="#">Trust Center</a>
+                        <a href="#">이벤트</a>
+                        <a href="#">다양성과 포용력</a>
+                        <a href="#">기업 윤리</a>
+                    </div>
+                </div>
             </div>
-        </div>
-        <hr style="background-color: #fafafa;">
         <div class="container-end">
             <div class="flex-box2">
                 <p>Copyright © 2023 Adobe. All rights reserved.
