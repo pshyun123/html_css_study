@@ -157,3 +157,12 @@ span {
 .footer a {
     text-decoration: none;
 }
+
+@media screen and (max-width: 509px){
+    .background-image{
+        background-image: none;  
+    }
+    .login-container{
+        margin: 0 auto;
+    }
+}
