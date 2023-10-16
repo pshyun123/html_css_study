@@ -8,6 +8,9 @@ a {
     text-decoration: none;
     color: #1473e6;
 }
+p{
+    font-weight: 300;
+}
 .navbar{
     display: flex;
     justify-content: space-between;
@@ -21,6 +24,7 @@ a {
     top: 0;
     left: 0;
     right: 0;  
+    
 }
 .navbar a{
     color: rgb(59, 58, 58)
@@ -30,7 +34,9 @@ a {
     align-items: center;
     flex-direction: row;
 }
-
+.toggle__adobe p{
+    font-weight: 700;
+}
 .navbar__right{
     display: flex;
     justify-content: center;
@@ -58,19 +64,6 @@ a {
 }
 
 
-/* 반응형 디자인에서 로그인 버튼 크기 조절 및 정렬 설정 */
-@media screen and (max-width: 768px) {
-    .login {
-        padding: 5px 10px; /* 반응형에서 더 작은 여백으로 설정 */
-    }
-    .navbar__right{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        margin-top: 21px;
-    }
-}
 
 /* 네비바 로고 */
 
@@ -125,44 +118,14 @@ a {
     font-size:24px;
     color:rgb(59, 58, 58);
 }
-/* 반응형 웹 네비게이션 바 */
-@media screen and (max-width:768px){
-    .navbar{
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .navbar__menu{
-        display: none;
-        flex-direction: column;
-        align-items: left;
-        width: 100%;
-    }
-    .navbar__menu li{
-        width: 100%;
-        text-align: left;
-        margin:0;
-    }
-    .toggleBtn{
-        display:block;
-    }
-    .navbar__icons{
-        display: none;
-        justify-content: left;
-        width:100%;
-    }
-    .navbar__menu.active,
-    .navbar__icons.active{
-        display: flex;
-    }
-    
 
-}
-/* 네이게이션 메뉴에 커서 올리면 */
-.navbar__menu li:hover{
+/* 네비 메뉴에 커서 올리면 */
+.navbar__menu li a:hover{
     color:#1473e6;
 }
-
+.navbar__right a:hover{
+    color:#1473e6;
+}
 /* 돋보기 아이콘.. */
 .navbar__icons li {
     padding: 8px 10px;
@@ -185,23 +148,30 @@ a {
     border: none;
     padding: 8px 20px;
     cursor: pointer;
-    border-radius: 10px; /* 테두리를 둥글게 만들기 위한 속성 */
+    border-radius: 20px;
 }
 .button:hover {
     background-color: #0d56af;
     color: white;
 }
-
+.dropdown > a {
+    white-space: nowrap;
+}
+.button > a {
+    white-space: nowrap;
+}
+.navbar__right{
+    white-space: nowrap;
+}
 /* 드롭다운 메뉴 */
 .dropdown {
     position: relative;
-    /* display: block; */
     box-sizing: border-box;
 }
 .dropdown a {
-    /* position: relative; */
     cursor: pointer;
     font-size: 16px;
+    
 }
 
 /* 드롭다운되는 메뉴 영역을 지정 */
@@ -232,27 +202,14 @@ a {
 }
 /* 서브 메뉴 항목에 hover 효과 넣기 */
 .dropdown-content a:hover {background-color: #f1f1f1}
-
-@media screen and (max-width:768px){
-    .dropdown-content{
-        display:none;
-    }
-    
-    /* 드롭다운 내용의 초기 상태 숨기기 */
-    .dropdown .dropdown-content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-in-out; 
-    }
-
-}
-
+  
 /* 메인1 */
 .main-text{
     width: 100%;
     font-size: 30px;
     text-align: center;
     padding:30px;
+    /* padding-top:35px; */
     /* margin-top: 20px; */
     color: white;
 }
@@ -271,48 +228,35 @@ a {
 /* 메인2-container section */
 
 .container{
-    /* max-width: 1920px; */
-    width: 100%;
-    display:grid;
-    place-items:center;
+    /* width: 100%; */
+    /* display:grid; */
+    /* place-items: center; */
+    /* min-height: 100dvh; */
 
 }
 .grid-container {
     display: grid;
-    place-items:center;
-    /* min-height: 100dvh; */
-    width: 90%;
-    /* margin: 0 auto; */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap:1rem;
+    width: 100%;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap:10px;
 }
 
-.grid-items{   
-    display: flex;
-    flex-direction: column; /* 항목을 세로로 나열 */
-    align-items: center;
+.grid-items{ 
+    outline: 1px solid red;  
     text-align: center;
-    height: 500px;
     padding: 20px;
     margin-bottom: 0;
     margin-top: 0;
 }
 
-.grid-items > img{
-    width: 60%;
-    min-width: 300px;
-    max-width: 100%;
-    background-size: cover;
-    /* display:block;
-    justify-content: center; */
+.grid-images > img{
+    width: 100%;
+    display:block;
 }
-.grid-items > .gird-title > h6{
-    /* text-align: left; */
+.grid-items > h6{
+    text-align: left;
     display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
     
 }
 /* main - 텍스트 관련 */
@@ -326,7 +270,7 @@ a {
 h3{
     font-size:28px;
     word-break: keep-all;
-    margin: 50px 0px 0px 20px
+    /* margin: 50px 0px 0px 20px */
 }
 /* 튜토리얼~ */
 h4{
@@ -335,8 +279,10 @@ h4{
 }
 /* 원하는 무엇이든~ */
 h5{
-    font-size: 20px;
+    font-size: 28px;
+    font-weight: 500;
     word-break: keep-all;
+    color: #323232;
 }
 /* 시작하기 / 영감 / 새로운 기능 */
 
@@ -344,6 +290,7 @@ p{
     line-height:20px;
 	font-size:14px;
     word-break: keep-all;
+    font-weight: 300;
 }
 
 h6{ 
@@ -420,10 +367,12 @@ h6{
     flex-direction: row;
     list-style: none;
     background-color: #fafafa;
-    padding: 15px;
+    padding-top: 6px;
+    margin-left: 30px;
+    margin-right: 30px;
     flex-wrap: nowrap;
     align-content: space-between;
-
+    border-top: 1px rgb(59, 58, 58) solid;
 
 }
 .container-end ul{
@@ -440,6 +389,7 @@ h6{
 .flex-box2 { 
     font-weight: 400;
     margin: 0;
+     
 }
 .flex-box2 a{
     color: rgb(39, 39, 39);
@@ -452,8 +402,71 @@ h6{
     word-break: keep-all;
 }
 
-/* 모바일용 Footer flex-box  */
-@media (max-width: 768px) {
+
+@media screen and (max-width:768px){
+
+/* 반응형 웹 네비게이션 바 */
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .navbar__menu{
+        display: none;
+        flex-direction: column;
+        align-items: left;
+        width: 100%;
+    }
+    .navbar__menu li{
+        width: 100%;
+        text-align: left;
+        margin:0;
+    }
+    .toggleBtn{
+        display:block;
+    }
+    .navbar__icons{
+        display: none;
+        justify-content: left;
+        width:100%;
+    }
+    .navbar__menu.active,
+    .navbar__icons.active{
+        display: flex;
+    }
+    .dropdown-content{
+        display:none;
+    }
+    
+    /* 드롭다운 내용의 초기 상태 숨기기 */
+    .dropdown .dropdown-content {
+        height: 0;
+        overflow: hidden;
+        transition: height 0.3s ease-in-out; 
+    }
+    /* 반응형 디자인에서 로그인 버튼 크기 조절 및 정렬 설정 */
+    .login {
+        padding: 5px 10px; /* 반응형에서 더 작은 여백으로 설정 */
+    }
+    .navbar__right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        margin-top: 21px;
+    }
+    .grid-items{
+        width: 100%; /* 100% 폭을 사용하여 가득 채웁니다. */
+        margin-bottom: 20px; /* 필요에 따라 간격을 조정하세요. */
+    }
+    .grid-images{
+        width: 100%
+    }
+    .grid-container {
+        grid-template-columns: 1fr; /* 1개의 열로 변경하여 세로 정렬 */
+    }
+
+/* footer 영역 */
     .container-box {
         display: flex;
         flex-direction: column;
@@ -474,7 +487,5 @@ h6{
     .flex-box {
         border-top: 1px rgb(59, 58, 58) solid;
     }
-    .grid-items{
-        max-width: 100%;
-    }
+   
 }
