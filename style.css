@@ -1,8 +1,6 @@
 body{
     margin: 0;
-    /* font-family: 'Noto Sans KR', sans-serif; */
-    font-family:adobe-clean-han-korean,adobe-clean,Apple SD Gothic Neo,Malgun Gothic,Apple Gothic,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;
-    
+    font-family:adobe-clean-han-korean,adobe-clean,Apple SD Gothic Neo,Malgun Gothic,Apple Gothic,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;   
 }
 a {
     text-decoration: none;
@@ -15,7 +13,6 @@ p{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* align-items: flex-start; */
     background-color: white;
     padding: 8px 16px;  
     flex-direction: row;
@@ -54,18 +51,11 @@ p{
     margin-right:20px
 }
 
-/* 로그인 버튼 스타일 */
 .login {
-    position: absolute; /* 로그인 버튼을 네비게이션 바에 대한 상대 위치로 설정합니다. */
-    top: 0; 
-    right: 20px; /* 네비게이션 바 오른쪽에 여백을 유지합니다. */
-    z-index: 2000; /* 다른 요소보다 위에 표시합니다. */
-    /* 나머지 스타일 속성 */
+    position: absolute; 
+    right: 20px; 
+    z-index: 2000; 
 }
-
-
-
-/* 네비바 로고 */
 
 .navbar__logo {
     font-size: 18px;
@@ -75,32 +65,26 @@ p{
     display: flex;
     flex-direction: row;
 }
-/* 네비바 로고-이미지 */
 .navbar__logo > img {
     display: inline;
     width: 40px;
     height: 40px;
 }
-/* 네비바 로고-텍스트 */
 .navbar__logo > p {
     padding-left: 10px;
     font-size: 20px;
     color:#F91101;
 }
-/* 메뉴바 메뉴 - 점 없애주고 패딩값 없앰 */
 .navbar__menu{
     display: flex;
     list-style: none;
     padding-left: 0;
 }
-/* 메뉴바 메뉴-리스트 사이 간격 조정 */
 .navbar__menu li {
     padding: 8px 40px;
     margin: 0 0 0 0px;
     text-align: center;
 }
-
-/* 오른쪽 돋보기 아이콘 설정 */
 .navbar_icons {
     list-style: none;
     color: rgb(59, 58, 58);
@@ -131,12 +115,9 @@ p{
     padding: 8px 10px;
     list-style: none;
 }
-/* 네이게이션 바- 햄버거  */
 .navbar__toggleBtn{
     position: absolute;
 }
-
-/* 파란 버튼 관련 */
  .button a{
     color: white;
     text-decoration: none;
@@ -170,8 +151,7 @@ p{
 }
 .dropdown a {
     cursor: pointer;
-    font-size: 16px;
-    
+    font-size: 16px; 
 }
 
 /* 드롭다운되는 메뉴 영역을 지정 */
@@ -213,7 +193,6 @@ p{
     /* margin-top: 20px; */
     color: white;
 }
-/* 이미지 사이즈 조절 */
 .main-image {
     background-image: url("./images/첫배경.jpg");
     background-size: cover;
@@ -227,13 +206,6 @@ p{
 
 /* 메인2-container section */
 
-.container{
-    /* width: 100%; */
-    /* display:grid; */
-    /* place-items: center; */
-    /* min-height: 100dvh; */
-
-}
 .grid-container {
     display: grid;
     width: 100%;
@@ -243,7 +215,6 @@ p{
 }
 
 .grid-items{ 
-    outline: 1px solid red;  
     text-align: center;
     padding: 20px;
     margin-bottom: 0;
@@ -259,7 +230,7 @@ p{
     display: block;
     
 }
-/* main - 텍스트 관련 */
+/* 메인 - 텍스트 속성 관련 */
 /* Make it. Creative Cloud. */
 /* 미처 알지 못했던~ 세계최고의~ 갱신을 통해~*/
 .main-text > h2{
@@ -342,7 +313,6 @@ h6{
     align-content: normal;
     justify-content: flex-start;
     align-items: normal;
-    
 }
 .flex-box{
     display: flex;
@@ -350,8 +320,6 @@ h6{
     margin-right: 30px;
     margin-left: 30px;
     padding:15px;
-    margin-top: 5px; 
-    
 }
 .flex-box a{
     margin-bottom: 5px;
@@ -360,6 +328,11 @@ h6{
 .flex-box p{
     font-weight: 700;
     font-size:17px;
+    white-space: nowrap;
+}
+
+.arrow {
+    display: none;
 }
 /* 푸터네비바2 */
 .container-end {
@@ -389,7 +362,6 @@ h6{
 .flex-box2 { 
     font-weight: 400;
     margin: 0;
-     
 }
 .flex-box2 a{
     color: rgb(39, 39, 39);
@@ -402,10 +374,8 @@ h6{
     word-break: keep-all;
 }
 
-
+/* 반응형 속성 적용 */
 @media screen and (max-width:768px){
-
-/* 반응형 웹 네비게이션 바 */
     .navbar{
         flex-direction: column;
         align-items: flex-start;
@@ -438,15 +408,13 @@ h6{
         display:none;
     }
     
-    /* 드롭다운 내용의 초기 상태 숨기기 */
     .dropdown .dropdown-content {
         height: 0;
         overflow: hidden;
         transition: height 0.3s ease-in-out; 
     }
-    /* 반응형 디자인에서 로그인 버튼 크기 조절 및 정렬 설정 */
     .login {
-        padding: 5px 10px; /* 반응형에서 더 작은 여백으로 설정 */
+        padding: 5px 10px; 
     }
     .navbar__right{
         display: flex;
@@ -456,14 +424,17 @@ h6{
         margin-top: 21px;
     }
     .grid-items{
-        width: 100%; /* 100% 폭을 사용하여 가득 채웁니다. */
-        margin-bottom: 20px; /* 필요에 따라 간격을 조정하세요. */
+        width: 100%; 
+        margin: 0px;
+        padding: 0px;
+        /* margin-bottom: 20px;  */
+
     }
     .grid-images{
         width: 100%
     }
     .grid-container {
-        grid-template-columns: 1fr; /* 1개의 열로 변경하여 세로 정렬 */
+        grid-template-columns: 1fr; 
     }
 
 /* footer 영역 */
@@ -478,7 +449,6 @@ h6{
         padding: 5px;
     }
     .container-end ul {
-        /* max-width: 100%;  */
         flex-direction: column;
     }
     .container-end > .flex-box2 > p{
@@ -487,5 +457,9 @@ h6{
     .flex-box {
         border-top: 1px rgb(59, 58, 58) solid;
     }
-   
+    .title_box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
